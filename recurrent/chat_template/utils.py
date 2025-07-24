@@ -1,6 +1,7 @@
 from pathlib import Path
 __registered_tokenizer__ = {
     "Qwen2TokenizerFast": "Qwen/Qwen2.5-0.5B-Instruct",
+    "Qwen3TokenizerFast": "Qwen/Qwen3-0.5B-Instruct",
 }
 __template_dir = Path(__file__).parent
 

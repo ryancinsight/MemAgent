@@ -7,7 +7,7 @@ NGPUS_PER_NODE=8
 PROJ_ROOT=
 DATASET_ROOT=
 
-MODEL_PATH=Qwen/Qwen2.5-14B-Instruct
+MODEL_PATH=Qwen/Qwen3-14B-Instruct
 VAL_PATH="${DATASET_ROOT}/hotpotqa/hotpotqa_dev.parquet"
 TRAIN_PATH="${DATASET_ROOT}/hotpotqa/hotpotqa_train_32k.parquet"
 EXP=memory_agent/14B

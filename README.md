@@ -125,9 +125,16 @@ export DATAROOT=$(pwd)/hotpotqa
 
 3. Preparing models
 
-The model used in tests will be downloaded from HuggingFace. However, Qwen2.5-Instruct series models needs to be downloaded manually and properly config their `config.json` to activate YaRN. Please follow the instruction in [Qwen2.5-Instruct Repo](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct)
+The model used in tests will be downloaded from HuggingFace. Both Qwen 3 and Qwen2.5-Instruct series models are supported. For Qwen2.5 models, you need to download manually and properly config their `config.json` to activate YaRN. Please follow the instruction in [Qwen2.5-Instruct Repo](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct)
 
+**For Qwen 3 models (recommended):**
+```bash
+bash hfd.sh Qwen/Qwen3-7B-Instruct --tool aria2c -x 10
+bash hfd.sh Qwen/Qwen3-14B-Instruct --tool aria2c -x 10
+bash hfd.sh Qwen/Qwen3-32B-Instruct --tool aria2c -x 10
+```
 
+**For Qwen 2.5 models (legacy support):**
 ```bash
 bash hfd.sh Qwen/Qwen2.5-7B-Instruct --tool aria2c -x 10
 bash hfd.sh Qwen/Qwen2.5-14B-Instruct --tool aria2c -x 10
@@ -137,6 +144,7 @@ bash hfd.sh Qwen/Qwen2.5-32B-Instruct --tool aria2c -x 10
 
 ```bash
 export MODELROOT=/your/path/to/models # move to your model root directory, this env variable is used in the run.py script
+# For Qwen 2.5 models only (YaRN configuration required)
 mv Qwen2.5-7B-Instruct $MODELROOT/Qwen2.5-7B-Instruct-128K
 mv Qwen2.5-14B-Instruct $MODELROOT/Qwen2.5-14B-Instruct-128K
 mv Qwen2.5-32B-Instruct $MODELROOT/Qwen2.5-32B-Instruct-128K
