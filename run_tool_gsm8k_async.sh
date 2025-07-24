@@ -6,7 +6,7 @@ NGPUS_PER_NODE=8
 PROJ_ROOT=
 DATASET_ROOT=
 
-MODEL_PATH=Qwen/Qwen3-3B-Instruct
+MODEL_PATH=Qwen/Qwen3-4B
 VAL_PATH=${DATASET_ROOT}/tool_gsm8k/test.parquet
 TRAIN_PATH=${DATASET_ROOT}/tool_gsm8k/train.parquet
 EXP=tool/gsm8k

@@ -21,11 +21,11 @@ torchrun --standalone --nnodes=1 --nproc_per_node=$nproc_per_node \
     data.prompt_dict_keys=['question'] \
     +data.response_dict_keys=['answer'] \
     data.micro_batch_size=4 \
-    model.partial_pretrain=Qwen/Qwen3-0.5B-Instruct \
+    model.partial_pretrain=Qwen/Qwen3-0.6B \
     model.use_liger=True \
     trainer.default_local_dir=$save_path \
     trainer.project_name=gsm8k-sft \
-    trainer.experiment_name=gsm8k-sft-qwen-3-0.5b-instruct-sp2-liger \
+    trainer.experiment_name=gsm8k-sft-qwen-3-0.6b-sp2-liger \
     trainer.logger=['console'] \
     trainer.default_hdfs_dir=null $@ \
     ulysses_sequence_parallel_size=2 \
