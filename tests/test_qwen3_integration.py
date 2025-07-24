@@ -17,9 +17,9 @@ class TestQwen3Integration(unittest.TestCase):
     def setUp(self):
         """Set up test fixtures."""
         self.test_model_paths = [
-            "Qwen/Qwen3-0.5B-Instruct",
-            "Qwen/Qwen3-7B-Instruct", 
-            "Qwen/Qwen3-14B-Instruct",
+            "Qwen/Qwen3-0.6B",
+            "Qwen/Qwen3-8B", 
+            "Qwen/Qwen3-14B",
         ]
         
     def test_qwen3_flops_counter_support(self):
@@ -31,7 +31,7 @@ class TestQwen3Integration(unittest.TestCase):
         """Test that Qwen 3 tokenizer is registered in chat templates."""
         from recurrent.chat_template.utils import __registered_tokenizer__
         self.assertIn("Qwen3TokenizerFast", __registered_tokenizer__)
-        self.assertEqual(__registered_tokenizer__["Qwen3TokenizerFast"], "Qwen/Qwen3-0.5B-Instruct")
+        self.assertEqual(__registered_tokenizer__["Qwen3TokenizerFast"], "Qwen/Qwen3-0.6B")
         
     def test_qwen3_chat_template_file_exists(self):
         """Test that Qwen 3 chat template file exists."""
